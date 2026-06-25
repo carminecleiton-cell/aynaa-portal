@@ -1,0 +1,11 @@
+fecha,canal,producto,cliente,cantidad,precio_unitario,costo_unitario
+2026-03-01,Mercado Libre,Kit papelería escolar,Cliente A,4,180,110
+2026-03-01,Tienda física,Libreta profesional,Cliente B,8,42,25
+2026-03-02,WhatsApp,Paquete de plumas,Cliente C,5,65,38
+2026-03-03,Amazon,Kit papelería escolar,Cliente D,2,195,115
+2026-03-03,Shopify,Agenda personalizada,Cliente E,3,220,135
+2026-03-04,Tienda física,Paquete de hojas,Cliente F,10,85,55
+2026-03-05,Mercado Libre,Agenda personalizada,Cliente G,2,230,140
+2026-03-05,WhatsApp,Kit oficina,Cliente H,1,450,280
+2026-03-06,Shopify,Kit oficina,Cliente I,2,450,280
+2026-03-07,Amazon,Paquete de plumas,Cliente J,6,70,38
