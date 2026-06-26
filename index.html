@@ -42,9 +42,101 @@
           <a class="btn secondary" href="#carga">Cargar archivo CSV</a>
         </div>
       </div>
+
+      <div class="hero-card">
+        <h3>¿Qué resuelve?</h3>
+        <ul>
+          <li>Información dispersa en Excel, ventas físicas y plataformas.</li>
+          <li>Falta de reportes claros por canal, producto y cliente.</li>
+          <li>Dificultad para medir ventas, utilidad y ticket promedio.</li>
+          <li>Necesidad de una solución sencilla y económica.</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- SECCIÓN DE ANÁLISIS REQUERIDA POR LA PROFESORA -->
+    <section class="section">
+      <h2>Modelo del proyecto</h2>
+      <div class="canvas-grid">
+        <article><h3>Socios clave</h3><p>Aliados tecnológicos, hosting, consultores de datos, negocios piloto y plataformas de e-commerce.</p></article>
+        <article><h3>Actividades clave</h3><p>Integrar datos, limpiar información, generar dashboards, capacitar usuarios y dar soporte.</p></article>
+        <article><h3>Propuesta de valor</h3><p>Concentrar ventas y operación en un solo sistema con reportes rápidos y compartibles.</p></article>
+        <article><h3>Relación con clientes</h3><p>Onboarding, atención personalizada, soporte por WhatsApp/correo y seguimiento mensual.</p></article>
+        <article><h3>Segmento de clientes</h3><p>Micro y pequeñas empresas con ventas multicanal que necesitan ordenar su información.</p></article>
+        <article><h3>Recursos clave</h3><p>Portal web, base de datos, dashboards, hosting, equipo de desarrollo y conocimiento del negocio.</p></article>
+        <article><h3>Canales</h3><p>Sitio web, redes sociales, recomendaciones, correo, videollamadas y demostraciones en línea.</p></article>
+        <article><h3>Costos</h3><p>Desarrollo, hosting, mantenimiento, licencias, capacitación, soporte y mejoras continuas.</p></article>
+        <article><h3>Ingresos</h3><p>Suscripción mensual, implementación inicial, personalización de módulos y soporte premium.</p></article>
+      </div>
+    </section>
+
+    <section id="dashboard" class="section dashboard">
+      <div class="section-header">
+        <div>
+          <span class="tag">MVP funcional</span>
+          <h2>Dashboard de ventas</h2>
+          <p>Los indicadores se actualizan con los datos de ejemplo o con el archivo CSV que cargues.</p>
+        </div>
+        <div class="filters">
+          <label for="channelFilter">Canal</label>
+          <select id="channelFilter"><option value="todos">Todos</option></select>
+          <label for="searchInput">Buscar</label>
+          <input id="searchInput" type="search" placeholder="Producto o cliente..." />
+        </div>
+      </div>
+
+      <div class="kpi-grid">
+        <article class="kpi"><span>Ventas totales</span><strong id="kpiVentas">$0</strong></article>
+        <article class="kpi"><span>Utilidad estimada</span><strong id="kpiUtilidad">$0</strong></article>
+        <article class="kpi"><span>Pedidos</span><strong id="kpiPedidos">0</strong></article>
+        <article class="kpi"><span>Ticket promedio</span><strong id="kpiTicket">$0</strong></article>
+        <article class="kpi"><span>Canal principal</span><strong id="kpiCanal">-</strong></article>
+        <article class="kpi"><span>Producto líder</span><strong id="kpiProducto">-</strong></article>
+      </div>
+
+      <div class="charts-grid">
+        <article class="chart-card"><h3>Ventas por canal</h3><div id="chartCanales" class="bar-chart"></div></article>
+        <article class="chart-card"><h3>Top productos</h3><div id="chartProductos" class="bar-chart"></div></article>
+      </div>
+
+      <article class="table-card">
+        <div class="table-title">
+          <h3>Detalle de ventas</h3>
+          <button class="btn small" id="downloadReport">Descargar reporte</button>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Fecha</th><th>Canal</th><th>Producto</th><th>Cliente</th><th>Cantidad</th><th>Ingreso</th><th>Utilidad</th></tr></thead>
+            <tbody id="salesTable"></tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <section id="carga" class="section upload-section">
+      <div>
+        <span class="tag">Carga de información</span>
+        <h2>Cargar ventas desde CSV</h2>
+        <p>Usa un archivo con las columnas: <strong>fecha, canal, producto, cliente, cantidad, precio_unitario, costo_unitario</strong>.</p>
+        <p class="note">Esta versión inicial funciona sin servidor y guarda los datos en el navegador con localStorage. Es ideal como prototipo escolar o MVP.</p>
+      </div>
+      <div class="upload-card">
+        <input id="csvFile" type="file" accept=".csv" />
+        <button class="btn primary" id="loadDemo">Restaurar datos demo</button>
+        <a class="btn secondary" href="datos_demo.csv" download>Descargar CSV de ejemplo</a>
+        <div id="uploadMessage" class="message"></div>
+      </div>
+    </section>
+
+    <section id="reportes" class="section">
+      <h2>Reportes y decisiones</h2>
+      <div class="decision-grid">
+        <article><h3>Decisiones comerciales</h3><p>Identifica qué productos generan más ingresos y qué canal tiene mayor participación.</p></article>
+        <article><h3>Control operativo</h3><p>Detecta ventas por fecha, movimientos de clientes y comportamiento del negocio.</p></article>
+        <article><h3>Seguimiento mensual</h3><p>Permite revisar el desempeño del negocio y generar reportes para compartir.</p></article>
+      </div>
+    </section>
+
+    <!-- SECCIÓN ACADÉMICA REQUERIDA POR LA PROFESORA (Mismo diseño nativo de tus tarjetas) -->
     <section id="documentacion" class="section">
       <div class="section-header">
         <div>
@@ -54,131 +146,100 @@
         </div>
       </div>
 
-      <!-- Resumen del Acta Constitutiva -->
-      <article class="table-card" style="margin-top: 24px; padding: 24px; background: var(--surface); border-radius: 16px; box-shadow: var(--shadow);">
+      <article class="table-card" style="margin-top: 24px;">
         <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
-          <div class="brand-icon" style="background: var(--primary-dark); font-size: 20px; width: 40px; height: 40px; display: grid; place-items: center; color: #fff; border-radius: 12px;">§</div>
-          <h3 style="margin: 0; font-size: 22px;">Resumen Ejecutivo: Acta Constitutiva</h3>
+          <div class="brand-icon" style="background: var(--primary-dark); font-size: 20px; width: 40px; height: 40px;">§</div>
+          <h3 style="margin: 0;">Resumen Ejecutivo: Acta Constitutiva</h3>
         </div>
         
-        <div class="note" style="margin-bottom: 20px;">
+        <p class="note" style="margin-bottom: 20px;">
           <strong>Instrumento Legal Notariado:</strong> Escritura Pública Número 12345, Libro MMD, Folio 5382, formalizado en la Ciudad de México ante la fe del Licenciado Carlos A. Sotero Regil Hernández, Notario Público Número 165.
-        </div>
+        </p>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;">
-          <div style="background: var(--bg); padding: 18px; border-radius: 14px; border: 1px solid var(--line);">
+        <div class="canvas-grid" style="border: none; background: transparent; box-shadow: none; padding: 0; margin-top: 0;">
+          <article style="margin-top: 0;">
             <h4 style="margin: 0 0 8px 0; color: var(--primary-dark);">Denominación y Generalidades</h4>
-            <ul style="margin: 0; padding-left: 20px; color: var(--muted); line-height: 1.6;">
+            <ul style="margin: 0; padding-left: 20px; color: var(--muted); line-height: 1.65;">
               <li><strong>Razón Social:</strong> Aynaa, S.A.</li>
               <li><strong>Duración:</strong> 99 Años (A partir de la firma).</li>
-              <li><strong>Domicilio Social:</strong> Av. Té 950, Col. Granjas México, Alcaldía Iztacalco, C.P. 08400, Ciudad de México (Instalaciones UPIICSA).</li>
+              <li><strong>Domicilio Social:</strong> Av. Té 950, Col. Granjas México, Alcaldía Iztacalco, C.P. 08400, CDMX (UPIICSA).</li>
             </ul>
-          </div>
+          </article>
 
-          <div style="background: var(--bg); padding: 18px; border-radius: 14px; border: 1px solid var(--line);">
+          <article style="margin-top: 0;">
             <h4 style="margin: 0 0 8px 0; color: var(--primary-dark);">Estructura del Capital Social</h4>
-            <ul style="margin: 0; padding-left: 20px; color: var(--muted); line-height: 1.6;">
+            <ul style="margin: 0; padding-left: 20px; color: var(--muted); line-height: 1.65;">
               <li><strong>Tipo de Sociedad:</strong> Sociedad Anónima de Capital Variable (S.A. de C.V.).</li>
               <li><strong>Distribución Accionaria:</strong> Capital suscrito de forma equitativa (20% por integrante del equipo de desarrollo).</li>
               <li><strong>Cláusula de Extranjería:</strong> Exclusión absoluta de personas físicas o morales extranjeras.</li>
             </ul>
-          </div>
+          </article>
         </div>
 
-        <div style="margin-bottom: 20px; background: var(--bg); padding: 18px; border-radius: 14px; border: 1px solid var(--line);">
+        <article style="margin-top: 20px; box-shadow: none; border: 1px solid var(--line);">
           <h4 style="margin: 0 0 8px 0; color: var(--primary-dark);">Objeto Principal de la Sociedad</h4>
-          <p style="margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6;">
+          <p style="margin: 0; font-size: 14px; line-height: 1.65;">
             I. Desarrollo, edición, comercialización e implementación de soluciones de software a la medida y plataformas web orientadas a la transformación digital.<br>
             II. Prestación de servicios de Tecnologías de la Información (TI) tales como consultoría analítica, gobernanza de datos y procesamiento de información financiera empresarial.<br>
             III. Soporte técnico especializado e integración de infraestructuras tecnológicas para micro, pequeñas y medianas empresas operando bajo modelos de comercio multicanal.
           </p>
-        </div>
+        </article>
 
-        <div style="background: var(--bg); padding: 18px; border-radius: 14px; border: 1px solid var(--line);">
+        <article style="margin-top: 20px; box-shadow: none; border: 1px solid var(--line);">
           <h4 style="margin: 0 0 12px 0; color: var(--primary-dark);">Órgano de Administración y Gobierno</h4>
           <div class="table-wrapper">
-            <table style="min-width: 100%; border-collapse: collapse;">
+            <table>
               <thead>
                 <tr>
-                  <th style="padding: 12px; text-align: left; border-bottom: 2px solid var(--line); color: var(--muted); font-size: 12px; text-transform: uppercase;">Cargo en el Consejo</th>
-                  <th style="padding: 12px; text-align: left; border-bottom: 2px solid var(--line); color: var(--muted); font-size: 12px; text-transform: uppercase;">Funcionario Designado</th>
-                  <th style="padding: 12px; text-align: left; border-bottom: 2px solid var(--line); color: var(--muted); font-size: 12px; text-transform: uppercase;">Facultades Otorgadas</th>
+                  <th>Cargo en el Consejo</th>
+                  <th>Funcionario Designado</th>
+                  <th>Facultades Otorgadas (Cláusula Décima Tercera)</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="padding: 12px; border-bottom: 1px solid var(--line);"><strong>Presidente del Consejo</strong></td>
-                  <td style="padding: 12px; border-bottom: 1px solid var(--line);">Ramirez Ramos Kevin Andres</td>
-                  <td style="padding: 12px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 13px;">Poder general amplísimo para pleitos, cobranzas, actos de administración y dominio ilimitado.</td>
+                  <td><strong>Presidente del Consejo</strong></td>
+                  <td>Ramirez Ramos Kevin Andres</td>
+                  <td>Poder general amplísimo para pleitos, cobranzas, actos de administración y dominio ilimitado.</td>
                 </tr>
                 <tr>
-                  <td style="padding: 12px; border-bottom: 1px solid var(--line);"><strong>Secretario</strong></td>
-                  <td style="padding: 12px; border-bottom: 1px solid var(--line);">Consultor Asociado TI 1</td>
-                  <td style="padding: 12px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 13px;">Gobernanza corporativa, control de actas de asamblea y fe institucional.</td>
+                  <td><strong>Secretario</strong></td>
+                  <td>Consultor Asociado TI 1</td>
+                  <td>Gobernanza corporativa, control de actas de asamblea y fe institucional.</td>
                 </tr>
                 <tr>
-                  <td style="padding: 12px; border-bottom: 1px solid var(--line);"><strong>Tesorero</strong></td>
-                  <td style="padding: 12px; border-bottom: 1px solid var(--line);">Consultor Asociado TI 2</td>
-                  <td style="padding: 12px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 13px;">Administración financiera, control de activos y flujos de efectivo.</td>
+                  <td><strong>Tesorero</strong></td>
+                  <td>Consultor Asociado TI 2</td>
+                  <td>Administración financiera, control de activos, flujos de efectivo y cuentas de cheques.</td>
                 </tr>
               </tbody>
             </table>
           </div>
-        </div>
+        </article>
       </article>
 
-      <!-- Secciones complementarias de planeación -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-top: 24px;">
-        <article style="background: var(--surface); padding: 20px; border-radius: 16px; box-shadow: var(--shadow); border: 1px solid var(--line);">
-          <h3 style="color: var(--primary-dark); margin-top: 0;">Palabras Clave (SEO)</h3>
-          <p style="font-size: 13px; color: var(--muted); line-height: 1.5;">Analítica multicanal, Inteligencia de Negocio (BI), Microempresas, Prototipo MVP, LocalStorage, Analítica accesible, Economía Digital, UPIICSA.</p>
+      <div class="canvas-grid">
+        <article>
+          <h3 style="color: var(--primary-dark);">Palabras Clave (SEO)</h3>
+          <p>Analítica multicanal, Inteligencia de Negocio (BI), Microempresas, Prototipo MVP, LocalStorage, Analítica accesible, Economía Digital, UPIICSA.</p>
         </article>
-        <article style="background: var(--surface); padding: 20px; border-radius: 16px; box-shadow: var(--shadow); border: 1px solid var(--line);">
-          <h3 style="color: var(--primary-dark); margin-top: 0;">Estrategia de Licitaciones</h3>
-          <p style="font-size: 13px; color: var(--muted); line-height: 1.5;">Participación en convocatorias de la SEDECO para dotar de herramientas analíticas sin costo de servidor a centros de comercio locales y proyectos regionales de economía digital.</p>
+        <article>
+          <h3 style="color: var(--primary-dark);">Estrategia de Licitaciones</h3>
+          <p>Planteamiento de participación en convocatorias públicas de la SEDECO enfocadas en el subsidio tecnológico y la modernización comercial de barrios vulnerables.</p>
         </article>
-        <article style="background: var(--surface); padding: 20px; border-radius: 16px; box-shadow: var(--shadow); border: 1px solid var(--line);">
-          <h3 style="color: var(--primary-dark); margin-top: 0;">Parrilla de Contenidos</h3>
-          <p style="font-size: 13px; color: var(--muted); line-height: 1.5;">Estrategia orgánica en LinkedIn, TikTok y WhatsApp Business mediante infografías y videos cortos sobre automatización de reportes desde archivos CSV y cálculo de KPIs directos.</p>
+        <article>
+          <h3 style="color: var(--primary-dark);">Parrilla de Contenidos</h3>
+          <p>Plan de marketing digital enfocado en LinkedIn y WhatsApp Business. Difusión de infografías didácticas sobre automatización de reportes financieros desde un CSV.</p>
         </article>
-      </div>
-    </section>
-
-    <!-- DASHBOARD EXISTENTE -->
-    <section id="dashboard" class="section">
-      <h2>Dashboard de ventas</h2>
-      <div style="background: var(--surface); padding: 20px; border-radius: 16px; margin-bottom: 20px; border: 1px solid var(--line); text-align: center;">
-        <p style="color: var(--muted); margin: 0;">[ El dashboard existente y su lógica se ejecutan de manera nativa mediante app.js ]</p>
-      </div>
-    </section>
-
-    <section id="carga" class="section">
-      <h2>Carga de archivos</h2>
-      <div class="upload-section">
-        <div class="upload-card" style="background: var(--surface); padding: 24px; border-radius: 16px; box-shadow: var(--shadow);">
-          <input type="file" id="csvFile" accept=".csv" />
-          <button id="loadDemo" class="btn primary">Restaurar datos demo</button>
-          <a class="btn secondary" href="datos_demo.csv" download>Descargar CSV de ejemplo</a>
-          <div id="uploadMessage" class="message"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="reportes" class="section">
-      <h2>Reportes y decisiones</h2>
-      <div class="decision-grid">
-        <article style="background: var(--surface); padding: 20px; border-radius: 16px; box-shadow: var(--shadow);"><h3>Decisiones comerciales</h3><p>Identifica qué productos generan más ingresos y qué canal tiene mayor participación.</p></article>
-        <article style="background: var(--surface); padding: 20px; border-radius: 16px; box-shadow: var(--shadow);"><h3>Control operativo</h3><p>Detecta ventas por fecha, movimientos de clientes y comportamiento del negocio.</p></article>
-        <article style="background: var(--surface); padding: 20px; border-radius: 16px; box-shadow: var(--shadow);"><h3>Seguimiento mensual</h3><p>Permite revisar el desempeño del negocio y generar reportes para compartir.</p></article>
       </div>
     </section>
 
     <section id="planes" class="section plans">
       <h2>Planes propuestos</h2>
       <div class="plans-grid">
-        <article style="background: var(--surface); padding: 20px; border-radius: 16px; box-shadow: var(--shadow);"><h3>Básico</h3><p class="price">$299/mes</p><p>Carga manual de CSV, dashboard de ventas y reporte mensual.</p></article>
-        <article class="featured" style="background: var(--surface); padding: 20px; border-radius: 16px; box-shadow: var(--shadow); border: 2px solid var(--primary);"><h3>Pro</h3><p class="price">$599/mes</p><p>Dashboard por canal, análisis de productos/clientes y soporte personalizado.</p></article>
-        <article style="background: var(--surface); padding: 20px; border-radius: 16px; box-shadow: var(--shadow);"><h3>Premium</h3><p class="price">Personalizado</p><p>Integraciones, módulos a medida, capacitación y soporte prioritario.</p></article>
+        <article><h3>Básico</h3><p class="price">$299/mes</p><p>Carga manual de CSV, dashboard de ventas y reporte mensual.</p></article>
+        <article class="featured"><h3>Pro</h3><p class="price">$599/mes</p><p>Dashboard por canal, análisis de productos/clientes y soporte personalizado.</p></article>
+        <article><h3>Premium</h3><p class="price">Personalizado</p><p>Integraciones, módulos a medida, capacitación y soporte prioritario.</p></article>
       </div>
     </section>
   </main>
